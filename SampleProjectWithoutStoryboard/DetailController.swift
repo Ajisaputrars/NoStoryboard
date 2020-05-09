@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  DetailController.swift
 //  SampleProjectWithoutStoryboard
 //
 //  Created by Aji Saputra Raka Siwi on 09/05/20.
@@ -8,13 +8,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class DetailController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
+        self.view.backgroundColor = .white
+        self.title = "Detail Screen"
     }
-
-
 }
-
