@@ -34,6 +34,22 @@ class MainController: UIViewController {
         return button
     }()
     
+    let AnotherLabel: UILabel = {
+        let label = UILabel()
+        label.text = "This is just a test. This is just a test. This is just a test. This is just a test. This is just a test. This is just a test. This is just a test."
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    let doneButton2: UIButton = {
+        let button = UIButton(type: UIButton.ButtonType.system)
+        button.setTitle("Start", for: .normal)
+        button.backgroundColor = UIColor(red: 255/255, green: 0/255, blue: 0/255, alpha: 1)
+        button.setTitleColor(.white, for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,12 +58,19 @@ class MainController: UIViewController {
         setupView()
         
         self.doneButton.addTarget(self, action: #selector(doneButtonPressed), for: .touchUpInside)
+        
+        self.doneButton2.addTarget(self, action: #selector(doneButtonPressed2), for: .touchUpInside)
+
     }
     
-    @objc
-    private func doneButtonPressed(){
+    @objc private func doneButtonPressed(){
         self.navigationController?.pushViewController(DetailController(), animated: true)
     }
+
+    @objc private func doneButtonPressed2(){
+        self.navigationController?.pushViewController(DetailController2(), animated: true)
+    }
+
     
     private func setupNavigationBar(){
         self.view.backgroundColor = .white
@@ -67,6 +90,9 @@ class MainController: UIViewController {
         self.view.addSubview(placeAndDateLabel)
         self.view.addSubview(illustrationImageView)
         self.view.addSubview(doneButton)
+        self.view.addSubview(AnotherLabel)
+        self.view.addSubview(doneButton2)
+
         
         //Set constraint for placeAndDateLabel
         self.placeAndDateLabel.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 16).isActive = true
@@ -86,6 +112,17 @@ class MainController: UIViewController {
         self.doneButton.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -64).isActive = true
         self.doneButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -16).isActive = true
         self.doneButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        
+        self.AnotherLabel.topAnchor.constraint(equalTo: self.illustrationImageView.bottomAnchor, constant: 16).isActive = true
+        self.AnotherLabel.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 100).isActive = true
+        self.AnotherLabel.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -100).isActive = true
+        
+        self.doneButton2.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 64).isActive = true
+        self.doneButton2.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -64).isActive = true
+        self.doneButton2.bottomAnchor.constraint(equalTo: self.doneButton.topAnchor, constant: -16).isActive = true
+        self.doneButton2.heightAnchor.constraint(equalToConstant: 50).isActive = true
+
+
     }
 }
 
