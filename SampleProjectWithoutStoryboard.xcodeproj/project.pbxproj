@@ -16,6 +16,7 @@
 		D74912BE246694E400CC12D3 /* SampleProjectWithoutStoryboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74912BD246694E400CC12D3 /* SampleProjectWithoutStoryboardTests.swift */; };
 		D74912C9246694E400CC12D3 /* SampleProjectWithoutStoryboardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74912C8246694E400CC12D3 /* SampleProjectWithoutStoryboardUITests.swift */; };
 		D74912D72466A37400CC12D3 /* DetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74912D62466A37400CC12D3 /* DetailController.swift */; };
+		D74913272469538500CC12D3 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74913262469538500CC12D3 /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		D74912C8246694E400CC12D3 /* SampleProjectWithoutStoryboardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleProjectWithoutStoryboardUITests.swift; sourceTree = "<group>"; };
 		D74912CA246694E400CC12D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D74912D62466A37400CC12D3 /* DetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailController.swift; sourceTree = "<group>"; };
+		D74913262469538500CC12D3 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,9 +103,11 @@
 		D74912A2246694E200CC12D3 /* SampleProjectWithoutStoryboard */ = {
 			isa = PBXGroup;
 			children = (
+				D749132A2469539F00CC12D3 /* Model */,
+				D74913292469539800CC12D3 /* View */,
+				D74913282469539000CC12D3 /* Controller */,
 				D74912A3246694E200CC12D3 /* AppDelegate.swift */,
 				D74912A5246694E200CC12D3 /* SceneDelegate.swift */,
-				D74912A7246694E200CC12D3 /* MainController.swift */,
 				D74912AF246694E400CC12D3 /* Assets.xcassets */,
 				D74912B1246694E400CC12D3 /* LaunchScreen.storyboard */,
 				D74912B4246694E400CC12D3 /* Info.plist */,
@@ -129,6 +133,29 @@
 				D74912CA246694E400CC12D3 /* Info.plist */,
 			);
 			path = SampleProjectWithoutStoryboardUITests;
+			sourceTree = "<group>";
+		};
+		D74913282469539000CC12D3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D74912A7246694E200CC12D3 /* MainController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D74913292469539800CC12D3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D74913262469538500CC12D3 /* MainView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D749132A2469539F00CC12D3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,6 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D74912A8246694E200CC12D3 /* MainController.swift in Sources */,
+				D74913272469538500CC12D3 /* MainView.swift in Sources */,
 				D74912AE246694E200CC12D3 /* SampleProjectWithoutStoryboard.xcdatamodeld in Sources */,
 				D74912A4246694E200CC12D3 /* AppDelegate.swift in Sources */,
 				D74912D72466A37400CC12D3 /* DetailController.swift in Sources */,
