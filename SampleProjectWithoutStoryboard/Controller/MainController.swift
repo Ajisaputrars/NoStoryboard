@@ -18,6 +18,8 @@ class MainController: UIViewController {
         self.view = self.mainView
 
         setupNavigationBar()
+        
+        self.mainView.doneButton.addTarget(self, action: #selector(doneButtonPressed), for: .touchUpInside)
     }
     
     @objc
