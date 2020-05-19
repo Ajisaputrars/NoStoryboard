@@ -7,13 +7,13 @@
 //
 
 import UIKit
+import SnapKit
 
 class MainView: UIView {
     
     let placeAndDateLabel: UILabel = {
         let label = UILabel()
         label.text = "Batam, 20 Februari 2020"
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
@@ -21,7 +21,6 @@ class MainView: UIView {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "sampleimage")
         imageView.contentMode = .scaleAspectFit
-        imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
     
@@ -30,7 +29,6 @@ class MainView: UIView {
         button.setTitle("Done", for: .normal)
         button.backgroundColor = UIColor(red: 147/255, green: 16/255, blue: 216/255, alpha: 1)
         button.setTitleColor(.white, for: .normal)
-        button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     
@@ -50,19 +48,26 @@ class MainView: UIView {
         self.addSubview(illustrationImageView)
         self.addSubview(doneButton)
         
-        //Set constraint for placeAndDateLabel
-        self.placeAndDateLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 16).isActive = true
-        self.placeAndDateLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 16).isActive = true
+        //Set constraint for placeAndDateLabel using SnapKit
+        self.placeAndDateLabel.snp.makeConstraints { (make) in
+            make.top.left.equalTo(self).offset(16)
+//            make.center.equalTo(self)
+//            make.centerX.equalTo(self)
+        }
         
-        //Set constraint for illustrationImageView
-        self.illustrationImageView.topAnchor.constraint(equalTo: self.placeAndDateLabel.bottomAnchor, constant: 64).isActive = true
-        self.illustrationImageView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 16).isActive = true
-        self.illustrationImageView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -16).isActive = true
+        //Set constraint for illustrationImageView using SnapKit
+        self.illustrationImageView.snp.makeConstraints { (make) in
+            make.top.equalTo(self.placeAndDateLabel.snp.bottom).offset(64)
+            make.left.equalTo(self).offset(16)
+            make.right.equalTo(self).offset(-16)
+        }
         
-        //Set constraint for doneButton
-        self.doneButton.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 64).isActive = true
-        self.doneButton.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -64).isActive = true
-        self.doneButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -16).isActive = true
-        self.doneButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        //Set constraint for doneButton using SnapKit
+        self.doneButton.snp.makeConstraints { (make) in
+            make.left.equalTo(self).offset(64)
+            make.right.equalTo(self).offset(-64)
+            make.bottom.equalTo(self).offset(-16)
+            make.height.equalTo(50)
+        }
     }
 }
