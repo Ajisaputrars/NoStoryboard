@@ -32,6 +32,13 @@ class MainView: UIView {
         return button
     }()
     
+    let sampleTextField: UITextField = {
+        let textField = UITextField()
+        textField.placeholder = "Sample Textfield"
+        textField.addBottomBorder(height: 1, color: UIColor(red: 206/255, green: 206/255, blue: 208/255, alpha: 1))
+        return textField
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -47,12 +54,14 @@ class MainView: UIView {
         self.addSubview(placeAndDateLabel)
         self.addSubview(illustrationImageView)
         self.addSubview(doneButton)
+        self.addSubview(sampleTextField)
+        
         
         //Set constraint for placeAndDateLabel using SnapKit
         self.placeAndDateLabel.snp.makeConstraints { (make) in
             make.top.left.equalTo(self).offset(16)
-//            make.center.equalTo(self)
-//            make.centerX.equalTo(self)
+            //            make.center.equalTo(self)
+            //            make.centerX.equalTo(self)
         }
         
         //Set constraint for illustrationImageView using SnapKit
@@ -68,6 +77,13 @@ class MainView: UIView {
             make.right.equalTo(self).offset(-64)
             make.bottom.equalTo(self).offset(-16)
             make.height.equalTo(50)
+        }
+        
+        self.sampleTextField.snp.makeConstraints { (make) in
+            make.left.equalTo(self).offset(64)
+            make.right.equalTo(self).offset(-64)
+            make.bottom.equalTo(doneButton.snp.top).offset(-16)
+            make.height.equalTo(40)
         }
     }
 }

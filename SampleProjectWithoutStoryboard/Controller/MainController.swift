@@ -40,4 +40,3 @@ class MainController: UIViewController {
         self.title = "Main Screen"
     }
 }
-
